@@ -2,8 +2,10 @@ import UIKit
 
 //Basic----------------------------------------------------------------------------------------
 
-//1.
-var Pi: Float = 3.14
+//1.(已修改）
+let Pi: Float = 3.14
+
+//Pi為不會改變的值故需使用let
 
 
 //2.
@@ -133,55 +135,56 @@ myCountryNumber["GB"] = nil
 //Control Flow -------------------------------------------------------------------------------------
 
 //1.
+print("-------- 1")
+
 let lottoNumbers = [10, 9, 8, 7, 6, 5]
 for i in 3...5 {
     print(lottoNumbers[i])
 }
 
 
+//2. (已修改）
+print("-------- 2")
 
-//2.
-
-for i in 5...10 {
-    print(i)
+for number in lottoNumbers.reversed() {
+    print(number)
 }
 
-//print(10)
-//print(8)
-//print(6)
-
-for j in (3...5).reversed() {
-    print(j*2)
+for number in lottoNumbers where number%2 == 0 {
+    print(number)
 }
 
 
+//3. (已修改）
+print("-------- 3")
 
-//3.
-var i = 5
-while i < 11 {
-    print(i)
-    i += 1
+var i = lottoNumbers.count-1
+while i >= 0  {
+    print(lottoNumbers[i])
+    i -= 1
 }
 
-var j = 10
-while j >= 6 {
-    print(j)
-    j -= 2
+var j = 0
+while j < lottoNumbers.count-1 {
+    print(lottoNumbers[j])
+    j += 2
 }
 
 
-//4.
-i = 5
+//4. (已修改）
+print("-------- 4")
+
+i = lottoNumbers.count-1
 repeat{
-    print(i)
-    i += 1
-}while i < 11
+    print(lottoNumbers[i])
+    i -= 1
+}while i >= 0
 
-j = 10
+j = 0
 repeat{
-    print(j)
-    j -= 2
-}while j >= 6
+    print(lottoNumbers[j])
+    j += 2
+}while j < lottoNumbers.count-1
 
 
 //5.
